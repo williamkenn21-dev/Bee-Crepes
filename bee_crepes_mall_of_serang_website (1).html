@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bee Crepes - Mall of Serang | Fresh, Tasty n' Fun</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Fredoka & Baloo 2 for Cute Candy Bouncy Style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind Configuration for Candy Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            candy: {
+              cream: '#FFFDF7',
+              ivory: '#FFF7E6',
+              butter: '#FFF0C2',
+              yellow: '#FFB800',
+              gold: '#FFA500',
+              warmYellow: '#FFE382',
+            },
+            choco: {
+              light: '#845330',
+              main: '#5C381E',
+              dark: '#3D2211',
+              deep: '#291407',
+            }
+          },
+          fontFamily: {
+            fredoka: ['"Fredoka"', 'cursive', 'sans-serif'],
+            baloo: ['"Baloo 2"', 'cursive', 'sans-serif'],
+          },
+          boxShadow: {
+            'candy': '0 8px 0px #3D2211',
+            'candy-hover': '0 4px 0px #3D2211',
+            'candy-card': '0 10px 25px -4px rgba(61, 34, 17, 0.12)',
+            'candy-bubble': 'inset 0 -4px 0 rgba(61, 34, 17, 0.2)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Fredoka', cursive, sans-serif;
+      background-color: #FFFDF7;
+      color: #3D2211;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Baloo 2', cursive, sans-serif;
+    }
+    
+    /* Playful Honeycomb & Candy Floating Animations */
+    @keyframes gentle-bounce {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(2deg); }
+    }
+    .animate-gentle-bounce {
+      animation: gentle-bounce 3.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bubble {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .animate-pulse-bubble {
+      animation: pulse-bubble 2.2s ease-in-out infinite;
+    }
+
+    /* Candy 3D Click Effect */
+    .btn-candy-3d {
+      transition: all 0.15s ease-in-out;
+      box-shadow: 0 6px 0px #3D2211;
+    }
+    .btn-candy-3d:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0px #3D2211;
+    }
+
+    /* Custom scrollbar matching candy colors */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF7E6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FFB800;
+      border: 3px solid #FFF7E6;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FFA500;
+    }
+  </style>
+</head>
+<body class="selection:bg-candy-yellow selection:text-choco-deep relative">
+
+  <!-- Sweet Top Announcement -->
+  <div class="bg-choco-dark text-candy-butter text-xs font-semibold py-2 px-4 border-b-2 border-candy-yellow">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="text-sm">🐝</span>
+        <span>Mall of Serang (MOS) Lantai Dasar · Panancangan, Cipocok Jaya</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span class="bg-candy-yellow text-choco-dark font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Buka 10.00 – 22.00 WIB
+        </span>
+        <a href="tel:089620194042" class="hover:text-candy-yellow transition">
+          <i class="fa-solid fa-phone"></i> 0896-2019-4042
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bubbly Candy Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-4 border-candy-butter shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo with mascot -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img src="image_779fc1.png" alt="Bee Crepes Logo" class="h-14 w-auto object-contain transform group-hover:rotate-3 transition duration-300">
+      </a>
+
+      <!-- Desktop Candy Navigation -->
+      <nav class="hidden md:flex items-center gap-2 bg-candy-ivory p-1.5 rounded-full border-2 border-candy-butter font-semibold text-sm text-choco-main">
+        <a href="#hero" class="px-4 py-1.5 rounded-full hover:bg-candy-yellow hover:text-choco-dark transition">Home</a>
+        <a href="#menu" class="px-4 py-1.5 rounded-full hover:bg-candy-yellow hover:text-choco-dark transition">Menu Crepes</a>
+        <a href="#keunggulan" class="px-4 py-1.5 rounded-full hover:bg-candy-yellow hover:text-choco-dark transition">Kenapa Kita?</a>
+        <a href="#ulasan" class="px-4 py-1.5 rounded-full hover:bg-candy-yellow hover:text-choco-dark transition">Ulasan MOS</a>
+        <a href="#lokasi" class="px-4 py-1.5 rounded-full hover:bg-candy-yellow hover:text-choco-dark transition">Lokasi</a>
+      </nav>
+
+      <!-- Cart Button & Quick CTA -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleCartDrawer()" class="relative bg-candy-yellow hover:bg-candy-gold text-choco-dark font-bold p-3 rounded-2xl border-2 border-choco-dark btn-candy-3d flex items-center justify-center">
+          <i class="fa-solid fa-cookie-bite text-lg"></i>
+          <span id="nav-cart-badge" class="absolute -top-2 -right-2 bg-choco-dark text-candy-butter text-xs font-black w-6 h-6 rounded-full flex items-center justify-center border-2 border-white shadow">
+            0
+          </span>
+        </button>
+
+        <a href="https://wa.me/6289620194042?text=Halo%20Bee%20Crepes%20Mall%20of%20Serang,%20saya%20mau%20pesan%20crepes" target="_blank" class="hidden sm:flex items-center gap-2 bg-choco-dark hover:bg-choco-main text-candy-butter px-5 py-2.5 rounded-2xl border-2 border-choco-dark font-bold text-xs btn-candy-3d">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+          <span>Chat Kasir</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button onclick="toggleMobileMenu()" class="md:hidden bg-candy-ivory p-2.5 rounded-2xl border-2 border-choco-dark text-choco-dark">
+          <i class="fa-solid fa-bars-staggered text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-candy-ivory border-b-4 border-candy-yellow px-6 py-4 space-y-3 font-bold text-sm text-choco-dark">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 hover:text-candy-gold">🍩 Beranda</a>
+      <a href="#menu" onclick="toggleMobileMenu()" class="block py-2 hover:text-candy-gold">🥞 Menu Crepes</a>
+      <a href="#keunggulan" onclick="toggleMobileMenu()" class="block py-2 hover:text-candy-gold">⭐ Kenapa Bee Crepes?</a>
+      <a href="#ulasan" onclick="toggleMobileMenu()" class="block py-2 hover:text-candy-gold">💬 Ulasan Pengunjung</a>
+      <a href="#lokasi" onclick="toggleMobileMenu()" class="block py-2 hover:text-candy-gold">📍 Lokasi Mall of Serang</a>
+      <a href="https://wa.me/6289620194042" target="_blank" class="w-full text-center flex items-center justify-center gap-2 bg-candy-yellow text-choco-dark font-black py-3 rounded-2xl border-2 border-choco-dark">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Order WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- Playful Hero Section -->
+  <section id="hero" class="relative overflow-hidden pt-10 pb-16 bg-gradient-to-b from-candy-ivory via-candy-cream to-white border-b-4 border-candy-butter">
+    
+    <!-- Floating cute decorative bubbles -->
+    <div class="absolute top-8 left-8 text-candy-yellow text-3xl opacity-40 animate-gentle-bounce">🍯</div>
+    <div class="absolute bottom-10 right-10 text-candy-gold text-4xl opacity-30 animate-pulse-bubble">✨</div>
+    <div class="absolute top-24 right-1/4 text-2xl opacity-30">🐝</div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-5">
+          
+          <div class="inline-flex items-center gap-2 bg-candy-butter/80 text-choco-main border-2 border-candy-yellow px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm">
+            <span class="animate-bounce">🐝</span> Fresh Tasty n' Fun! · Mall of Serang
+          </div>
+
+          <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-choco-dark leading-[1.15]">
+            Crepes Renyah, <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-candy-gold to-candy-yellow drop-shadow-sm">
+              Lumer & Bikin Happy!
+            </span>
+          </h1>
+
+          <p class="text-choco-light text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+            Sensasi crepes tipis renyah dengan isian keju melimpah, saus cokelat lumer, stroberi manis, sosis gurih daging, dan es krim segar favorit anak-anak sampai dewasa di MOS!
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-base px-8 py-3.5 rounded-2xl border-3 border-choco-dark btn-candy-3d">
+              <i class="fa-solid fa-cookie-bite"></i>
+              <span>Pilih Crepes Kesukaan</span>
+            </a>
+            <a href="#lokasi" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-candy-ivory text-choco-dark font-bold text-base px-6 py-3.5 rounded-2xl border-2 border-candy-yellow shadow-sm">
+              <i class="fa-solid fa-location-dot text-candy-gold"></i>
+              <span>Lihat Rute MOS</span>
+            </a>
+          </div>
+
+          <!-- Sweet Trust Badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3 text-xs font-bold text-choco-main">
+            <span class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-candy-butter shadow-xs">
+              <i class="fa-solid fa-star text-amber-500"></i> 4.8 Rating Google (51+ Ulasan)
+            </span>
+            <span class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-candy-butter shadow-xs">
+              <i class="fa-solid fa-check-circle text-emerald-600"></i> Dibuat Fresh di Booth
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Showcase -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-sm">
+            
+            <!-- Candy Outline Frame -->
+            <div class="bg-white p-3 rounded-3xl border-4 border-choco-dark shadow-candy transform rotate-1 hover:rotate-0 transition duration-300">
+              <div class="relative rounded-2xl overflow-hidden h-72 bg-candy-butter">
+                <img src="image_77a075.jpg" alt="Ice Cream Bee Crepes" class="w-full h-full object-cover">
+                <div class="absolute top-3 left-3 bg-candy-yellow text-choco-dark text-xs font-black px-3 py-1 rounded-full border-2 border-choco-dark shadow">
+                  🍦 Super Favorite!
+                </div>
+              </div>
+              <div class="p-3 text-center">
+                <h3 class="font-heading font-bold text-choco-dark text-lg">Ice Cream Bee Crepe</h3>
+                <p class="text-xs text-choco-light font-medium">Dingin, lembut dengan pisang & cokelat lezat</p>
+              </div>
+            </div>
+
+            <!-- Floating Savory Preview Badge -->
+            <div class="absolute -bottom-6 -left-6 bg-white p-2.5 rounded-2xl border-3 border-choco-dark shadow-candy hidden sm:flex items-center gap-3 transform -rotate-3 hover:scale-105 transition">
+              <img src="image_77a03b.jpg" alt="Meatlovers" class="w-14 h-14 rounded-xl object-cover border border-candy-butter">
+              <div class="pr-2">
+                <span class="text-[10px] font-black uppercase text-red-600">🥓 Gurih Renyah</span>
+                <p class="font-bold text-xs text-choco-dark">Meatlovers & Cheese</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Candy Feature Strips -->
+  <section id="keunggulan" class="py-12 bg-candy-ivory border-b-4 border-candy-butter">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-xs font-extrabold text-choco-main uppercase tracking-widest bg-candy-yellow/60 px-3 py-1 rounded-full border border-candy-yellow">Kelebihan Bee Crepes</span>
+        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-choco-dark mt-2">Dibuat dengan Senyum & Cinta Manis</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <div class="bg-white p-5 rounded-3xl border-3 border-candy-butter text-center shadow-candy-card hover:-translate-y-1 transition duration-200">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-candy-yellow/40 border-2 border-candy-yellow flex items-center justify-center text-2xl mb-2">
+            🍪
+          </div>
+          <h4 class="font-heading font-bold text-sm sm:text-base text-choco-dark">Garing Sempurna</h4>
+          <p class="text-xs text-choco-light font-medium mt-1">Kulit tipis keemasan yang kriuk sampai gigitan akhir.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-3xl border-3 border-candy-butter text-center shadow-candy-card hover:-translate-y-1 transition duration-200">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-candy-yellow/40 border-2 border-candy-yellow flex items-center justify-center text-2xl mb-2">
+            🧀
+          </div>
+          <h4 class="font-heading font-bold text-sm sm:text-base text-choco-dark">Topping Melimpah</h4>
+          <p class="text-xs text-choco-light font-medium mt-1">Parutan keju tebal & saus cokelat lumer tanpa pelit.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-3xl border-3 border-candy-butter text-center shadow-candy-card hover:-translate-y-1 transition duration-200">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-candy-yellow/40 border-2 border-candy-yellow flex items-center justify-center text-2xl mb-2">
+            🍓
+          </div>
+          <h4 class="font-heading font-bold text-sm sm:text-base text-choco-dark">Pilihan Lengkap</h4>
+          <p class="text-xs text-choco-light font-medium mt-1">Dari manis berry, maltine, sampai sosis gurih lezat.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-3xl border-3 border-candy-butter text-center shadow-candy-card hover:-translate-y-1 transition duration-200">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-candy-yellow/40 border-2 border-candy-yellow flex items-center justify-center text-2xl mb-2">
+            📍
+          </div>
+          <h4 class="font-heading font-bold text-sm sm:text-base text-choco-dark">Lokasi Nyaman</h4>
+          <p class="text-xs text-choco-light font-medium mt-1">Mudah dijumpai saat jalan-jalan santai di Mall of Serang.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Menu Catalog (Completely Clean of Any Prices) -->
+  <section id="menu" class="py-16 bg-candy-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 bg-candy-yellow text-choco-dark font-extrabold text-xs px-3.5 py-1.5 rounded-full border-2 border-choco-dark mb-2">
+          <span>🐝</span> MENU FAVORIT BEE CREPES
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-choco-dark">Varian Rasa Menggoda</h2>
+        <p class="text-choco-light text-sm mt-1">Pilih menu favoritmu, tambahkan ke keranjang, dan langsung kirim pesanan ke kasir via WhatsApp!</p>
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
+          <button onclick="filterCategory('all', this)" class="category-btn active bg-choco-dark text-candy-butter font-bold text-xs px-5 py-2.5 rounded-full border-2 border-choco-dark transition">
+            🌟 Semua Rasa
+          </button>
+          <button onclick="filterCategory('sweet', this)" class="category-btn bg-white hover:bg-candy-butter text-choco-dark font-bold text-xs px-5 py-2.5 rounded-full border-2 border-choco-dark transition">
+            🍫 Manis Lezat
+          </button>
+          <button onclick="filterCategory('savory', this)" class="category-btn bg-white hover:bg-candy-butter text-choco-dark font-bold text-xs px-5 py-2.5 rounded-full border-2 border-choco-dark transition">
+            🧀 Gurih & Daging
+          </button>
+          <button onclick="filterCategory('special', this)" class="category-btn bg-white hover:bg-candy-butter text-choco-dark font-bold text-xs px-5 py-2.5 rounded-full border-2 border-choco-dark transition">
+            🍨 Ice Cream Cone
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Meatlovers and Cheese -->
+        <div class="menu-card bg-white rounded-3xl border-3 border-candy-butter hover:border-candy-yellow overflow-hidden shadow-candy-card transition duration-300 flex flex-col justify-between" data-category="savory">
+          <div>
+            <div class="relative h-56 bg-candy-butter overflow-hidden cursor-pointer" onclick="openDetail(1)">
+              <img src="image_77a03b.jpg" alt="Meatlovers and Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+              <span class="absolute top-3 left-3 bg-red-500 text-white font-black text-[11px] px-3 py-1 rounded-full border-2 border-white shadow">
+                🥓 Savory Treat
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-extrabold text-xl text-choco-dark hover:text-candy-gold cursor-pointer transition" onclick="openDetail(1)">
+                Meatlovers and Cheese
+              </h3>
+              <p class="text-choco-light text-xs mt-1.5 line-clamp-2">
+                Kombinasi sosis gurih, irisan daging asap lezat, selada segar, dan lelehan keju parut gurih dengan saus mayo nikmat.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Sosis Pilihan</span>
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Keju Cheddar</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between gap-2 border-t border-candy-butter mt-2 pt-3">
+            <button onclick="openDetail(1)" class="text-xs font-bold text-choco-light hover:text-choco-dark underline decoration-candy-yellow decoration-2">
+              Detail Rasa
+            </button>
+            <button onclick="addToOrder(1)" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs px-4 py-2.5 rounded-xl border-2 border-choco-dark btn-candy-3d flex items-center gap-1.5">
+              <i class="fa-solid fa-plus"></i> Tambah Menu
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Ice Cream Bee -->
+        <div class="menu-card bg-white rounded-3xl border-3 border-candy-butter hover:border-candy-yellow overflow-hidden shadow-candy-card transition duration-300 flex flex-col justify-between" data-category="special">
+          <div>
+            <div class="relative h-56 bg-candy-butter overflow-hidden cursor-pointer" onclick="openDetail(2)">
+              <img src="image_77a075.jpg" alt="Ice Cream Bee" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+              <span class="absolute top-3 left-3 bg-candy-yellow text-choco-dark font-black text-[11px] px-3 py-1 rounded-full border-2 border-choco-dark shadow">
+                🍦 Kids & All Favorite
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-extrabold text-xl text-choco-dark hover:text-candy-gold cursor-pointer transition" onclick="openDetail(2)">
+                Ice Cream Bee
+              </h3>
+              <p class="text-choco-light text-xs mt-1.5 line-clamp-2">
+                Crepe cone garing diisi scoop es krim cokelat & vanila creamy dengan irisan pisang manis, saus cokelat, dan remahan wafer.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Duo Es Krim</span>
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Pisang Segar</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between gap-2 border-t border-candy-butter mt-2 pt-3">
+            <button onclick="openDetail(2)" class="text-xs font-bold text-choco-light hover:text-choco-dark underline decoration-candy-yellow decoration-2">
+              Detail Rasa
+            </button>
+            <button onclick="addToOrder(2)" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs px-4 py-2.5 rounded-xl border-2 border-choco-dark btn-candy-3d flex items-center gap-1.5">
+              <i class="fa-solid fa-plus"></i> Tambah Menu
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Chocomaltine Cheese -->
+        <div class="menu-card bg-white rounded-3xl border-3 border-candy-butter hover:border-candy-yellow overflow-hidden shadow-candy-card transition duration-300 flex flex-col justify-between" data-category="sweet">
+          <div>
+            <div class="relative h-56 bg-candy-butter overflow-hidden cursor-pointer" onclick="openDetail(3)">
+              <img src="image_77a091.jpg" alt="Chocomaltine Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+              <span class="absolute top-3 left-3 bg-choco-main text-candy-butter font-black text-[11px] px-3 py-1 rounded-full border-2 border-white shadow">
+                🍫 Crunchy Malt
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-extrabold text-xl text-choco-dark hover:text-candy-gold cursor-pointer transition" onclick="openDetail(3)">
+                Chocomaltine Cheese
+              </h3>
+              <p class="text-choco-light text-xs mt-1.5 line-clamp-2">
+                Olesan tebal cokelat malt berbulir crunchy garing dipadu gurihnya taburan keju cheddar parut tebal di setiap suapan.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Chocomaltine</span>
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Keju Serut</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between gap-2 border-t border-candy-butter mt-2 pt-3">
+            <button onclick="openDetail(3)" class="text-xs font-bold text-choco-light hover:text-choco-dark underline decoration-candy-yellow decoration-2">
+              Detail Rasa
+            </button>
+            <button onclick="addToOrder(3)" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs px-4 py-2.5 rounded-xl border-2 border-choco-dark btn-candy-3d flex items-center gap-1.5">
+              <i class="fa-solid fa-plus"></i> Tambah Menu
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Blueberry Cheese -->
+        <div class="menu-card bg-white rounded-3xl border-3 border-candy-butter hover:border-candy-yellow overflow-hidden shadow-candy-card transition duration-300 flex flex-col justify-between" data-category="sweet">
+          <div>
+            <div class="relative h-56 bg-candy-butter overflow-hidden cursor-pointer" onclick="openDetail(4)">
+              <img src="image_77a09a.jpg" alt="Blueberry Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+              <span class="absolute top-3 left-3 bg-indigo-600 text-white font-black text-[11px] px-3 py-1 rounded-full border-2 border-white shadow">
+                🫐 Segar & Manis
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-extrabold text-xl text-choco-dark hover:text-candy-gold cursor-pointer transition" onclick="openDetail(4)">
+                Blueberry Cheese
+              </h3>
+              <p class="text-choco-light text-xs mt-1.5 line-clamp-2">
+                Selai buah blueberry legit dengan sentuhan manis dan asam segar, dipadu gurihnya keju parut gurih pada crepes hangat.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Blueberry Jam</span>
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Keju Cheddar</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between gap-2 border-t border-candy-butter mt-2 pt-3">
+            <button onclick="openDetail(4)" class="text-xs font-bold text-choco-light hover:text-choco-dark underline decoration-candy-yellow decoration-2">
+              Detail Rasa
+            </button>
+            <button onclick="addToOrder(4)" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs px-4 py-2.5 rounded-xl border-2 border-choco-dark btn-candy-3d flex items-center gap-1.5">
+              <i class="fa-solid fa-plus"></i> Tambah Menu
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Choco Cheese -->
+        <div class="menu-card bg-white rounded-3xl border-3 border-candy-butter hover:border-candy-yellow overflow-hidden shadow-candy-card transition duration-300 flex flex-col justify-between" data-category="sweet">
+          <div>
+            <div class="relative h-56 bg-candy-butter overflow-hidden cursor-pointer" onclick="openDetail(5)">
+              <img src="image_77a39a.jpg" alt="Choco Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+              <span class="absolute top-3 left-3 bg-amber-500 text-choco-dark font-black text-[11px] px-3 py-1 rounded-full border-2 border-choco-dark shadow">
+                ⭐ Best Seller Klasik
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-extrabold text-xl text-choco-dark hover:text-candy-gold cursor-pointer transition" onclick="openDetail(5)">
+                Choco Cheese
+              </h3>
+              <p class="text-choco-light text-xs mt-1.5 line-clamp-2">
+                Rasa klasik tak tertandingi! Taburan cokelat meses tebal manis legit bercampur asin gurih keju parut dalam crepes renyah.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Cokelat Meses</span>
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Keju Cheddar</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between gap-2 border-t border-candy-butter mt-2 pt-3">
+            <button onclick="openDetail(5)" class="text-xs font-bold text-choco-light hover:text-choco-dark underline decoration-candy-yellow decoration-2">
+              Detail Rasa
+            </button>
+            <button onclick="addToOrder(5)" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs px-4 py-2.5 rounded-xl border-2 border-choco-dark btn-candy-3d flex items-center gap-1.5">
+              <i class="fa-solid fa-plus"></i> Tambah Menu
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Strawberry Cheese -->
+        <div class="menu-card bg-white rounded-3xl border-3 border-candy-butter hover:border-candy-yellow overflow-hidden shadow-candy-card transition duration-300 flex flex-col justify-between" data-category="sweet">
+          <div>
+            <div class="relative h-56 bg-candy-butter overflow-hidden cursor-pointer" onclick="openDetail(6)">
+              <img src="image_77a3ba.jpg" alt="Strawberry Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+              <span class="absolute top-3 left-3 bg-rose-500 text-white font-black text-[11px] px-3 py-1 rounded-full border-2 border-white shadow">
+                🍓 Fresh Berry
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-extrabold text-xl text-choco-dark hover:text-candy-gold cursor-pointer transition" onclick="openDetail(6)">
+                Strawberry Cheese
+              </h3>
+              <p class="text-choco-light text-xs mt-1.5 line-clamp-2">
+                Lelehan saus stroberi merah asam manis menyegarkan dengan butiran cokelat meses dan keju parut gurih memanjakan lidah.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Saus Stroberi</span>
+                <span class="text-[10px] font-bold bg-candy-ivory text-choco-main px-2 py-0.5 rounded-md border border-candy-butter">Meses & Keju</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between gap-2 border-t border-candy-butter mt-2 pt-3">
+            <button onclick="openDetail(6)" class="text-xs font-bold text-choco-light hover:text-choco-dark underline decoration-candy-yellow decoration-2">
+              Detail Rasa
+            </button>
+            <button onclick="addToOrder(6)" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs px-4 py-2.5 rounded-xl border-2 border-choco-dark btn-candy-3d flex items-center gap-1.5">
+              <i class="fa-solid fa-plus"></i> Tambah Menu
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Maps Review Section -->
+  <section id="ulasan" class="py-14 bg-candy-ivory border-y-4 border-candy-butter">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between mb-10 gap-4 text-center md:text-left">
+        <div>
+          <span class="text-xs font-black uppercase text-choco-main bg-candy-yellow/60 px-3 py-1 rounded-full border border-candy-yellow">
+            ⭐ GOOGLE MAPS REVIEWS
+          </span>
+          <h2 class="font-heading text-3xl font-extrabold text-choco-dark mt-2">Kata Pengunjung Mall of Serang</h2>
+          <p class="text-choco-light text-xs sm:text-sm">Ulasan asli dari pencinta crepes di gerai Bee Crepes MOS</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-3xl border-3 border-choco-dark shadow-candy flex items-center gap-4">
+          <div class="text-center pl-2">
+            <span class="font-heading font-extrabold text-3xl text-candy-gold">4.8</span>
+            <div class="text-candy-gold text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="border-l-2 border-candy-butter pl-4 text-xs font-bold text-choco-main text-left">
+            <p>51+ Ulasan Terverifikasi</p>
+            <p class="text-choco-light text-[11px] font-normal">Mall of Serang, Cipocok Jaya</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Carousel/Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1: Ratu Bilqis -->
+        <div class="bg-white p-6 rounded-3xl border-3 border-candy-butter shadow-candy-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-2xl bg-candy-yellow text-choco-dark font-extrabold flex items-center justify-center text-sm border-2 border-choco-dark">
+                RB
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-choco-dark">Ratu Bilqis</h4>
+                <p class="text-[10px] text-amber-700 font-bold">Local Guide · 137 ulasan</p>
+              </div>
+            </div>
+            <div class="text-candy-gold text-xs mb-2">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-choco-light leading-relaxed italic">
+              "Aromanya wangi dan rasanya enak, harga standar di mall tidak mahal tapi tidak murah, pelayanan baik dan ramah."
+            </p>
+          </div>
+          <span class="mt-4 pt-3 border-t border-candy-butter text-[10px] text-choco-light font-semibold">
+            Google Maps · Pengunjung MOS
+          </span>
+        </div>
+
+        <!-- Review 2: Kanaya Tiony -->
+        <div class="bg-white p-6 rounded-3xl border-3 border-candy-butter shadow-candy-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-2xl bg-choco-main text-candy-butter font-extrabold flex items-center justify-center text-sm border-2 border-choco-dark">
+                KT
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-choco-dark">Kanaya Tiony</h4>
+                <p class="text-[10px] text-choco-light font-semibold">2 ulasan · 1 foto</p>
+              </div>
+            </div>
+            <div class="text-candy-gold text-xs mb-2">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-choco-light leading-relaxed italic">
+              "Varian crepesnya beragam banget dan wangi saat dipanggang langsung di tempat. Chocomaltine Cheese & Ice Crepes selalu favorit!"
+            </p>
+          </div>
+          <span class="mt-4 pt-3 border-t border-candy-butter text-[10px] text-choco-light font-semibold">
+            Google Maps · Terverifikasi
+          </span>
+        </div>
+
+        <!-- Review 3: Ahmad -->
+        <div class="bg-white p-6 rounded-3xl border-3 border-candy-butter shadow-candy-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-2xl bg-emerald-600 text-white font-extrabold flex items-center justify-center text-sm border-2 border-choco-dark">
+                AP
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-choco-dark">Ahmad Pratama</h4>
+                <p class="text-[10px] text-choco-light font-semibold">Pelanggan MOS</p>
+              </div>
+            </div>
+            <div class="text-candy-gold text-xs mb-2">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-choco-light leading-relaxed italic">
+              "Meatlovers and Cheese mantap buat ganjal perut saat keliling mall. Kulit crepesnya renyah garing dan keju melimpah."
+            </p>
+          </div>
+          <span class="mt-4 pt-3 border-t border-candy-butter text-[10px] text-choco-light font-semibold">
+            Google Maps · Menu Savory
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Location & Mall of Serang Info -->
+  <section id="lokasi" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-black uppercase text-choco-main bg-candy-butter px-3 py-1 rounded-full border border-candy-yellow">
+          📍 ALAMAT & AKSES
+        </span>
+        <h2 class="font-heading text-3xl font-extrabold text-choco-dark mt-2">Mampir ke Booth Kami di MOS</h2>
+        <p class="text-choco-light text-xs sm:text-sm">Bisa langsung datang atau pesan dulu via WhatsApp kasir agar tinggal ambil.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Info Box -->
+        <div class="lg:col-span-5 bg-candy-ivory p-6 sm:p-8 rounded-3xl border-3 border-choco-dark shadow-candy flex flex-col justify-between space-y-6">
+          
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-candy-yellow text-choco-dark flex items-center justify-center text-xl shrink-0 border-2 border-choco-dark">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-base text-choco-dark">Mall of Serang (MOS)</h4>
+                <p class="text-xs text-choco-light mt-0.5 leading-relaxed">
+                  Lantai Dasar, V5JJ+7R5, Panancangan, Kec. Cipocok Jaya, Kota Serang, Banten 42124
+                </p>
+                <span class="inline-block mt-1 text-[11px] font-bold bg-white text-choco-main px-2.5 py-0.5 rounded-md border border-candy-butter">
+                  Plus Code: V5JJ+7R5
+                </span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-candy-butter text-choco-dark flex items-center justify-center text-xl shrink-0 border-2 border-choco-dark">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-base text-choco-dark">Jam Buka</h4>
+                <p class="text-xs text-choco-light mt-0.5">Senin – Minggu: <strong>10.00 – 22.00 WIB</strong></p>
+                <p class="text-[11px] text-choco-light/80 italic mt-0.5">Buka setiap hari mengikuti jam mall</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl shrink-0 border-2 border-choco-dark">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-base text-choco-dark">Kontak & Pemesanan</h4>
+                <p class="text-xs text-choco-light mt-0.5">Chat cepat dengan barista / kasir booth:</p>
+                <a href="https://wa.me/6289620194042" target="_blank" class="font-black text-sm text-choco-dark hover:text-candy-gold underline">
+                  0896-2019-4042
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <a href="https://maps.google.com/?q=Mall+of+Serang" target="_blank" class="bg-choco-dark hover:bg-choco-main text-candy-butter font-bold text-xs py-3 px-4 rounded-2xl text-center btn-candy-3d border-2 border-choco-dark">
+              <i class="fa-solid fa-diamond-turn-right text-candy-yellow"></i> Google Maps
+            </a>
+            <a href="https://wa.me/6289620194042?text=Halo%20Bee%20Crepes%20MOS" target="_blank" class="bg-candy-yellow hover:bg-candy-gold text-choco-dark font-extrabold text-xs py-3 px-4 rounded-2xl text-center btn-candy-3d border-2 border-choco-dark">
+              <i class="fa-brands fa-whatsapp text-emerald-700"></i> WhatsApp
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Google Maps Embed Frame -->
+        <div class="lg:col-span-7 rounded-3xl overflow-hidden border-3 border-choco-dark shadow-candy min-h-[340px] bg-candy-butter flex flex-col">
+          <div class="bg-choco-dark text-candy-butter px-4 py-2.5 flex items-center justify-between text-xs font-bold">
+            <span><i class="fa-solid fa-map-pin text-candy-yellow"></i> Peta Lokasi Gerai MOS</span>
+            <span class="text-candy-butter/80 text-[11px]">Kota Serang, Banten</span>
+          </div>
+          <iframe 
+            class="w-full flex-1 min-h-[300px] border-0"
+            src="https://maps.google.com/maps?q=Mall+of+Serang+Panancangan+Cipocok+Jaya&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cute Candy Footer -->
+  <footer class="bg-choco-dark text-candy-butter pt-12 pb-8 border-t-4 border-candy-yellow">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-choco-light/40">
+        
+        <div class="md:col-span-6 space-y-3">
+          <img src="image_779fc1.png" alt="Bee Crepes Mascot" class="h-16 w-auto bg-white p-2 rounded-2xl border-2 border-candy-butter inline-block">
+          <h4 class="font-heading font-extrabold text-xl text-white">Bee Crepes - Mall of Serang</h4>
+          <p class="text-xs text-candy-butter/80 max-w-sm leading-relaxed">
+            Menghadirkan kreasi crepes garing manis & gurih segar setiap hari dengan slogan <em>Fresh Tasty n' Fun</em>.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2 text-xs">
+          <h5 class="font-bold text-white text-sm">Varian Favorit</h5>
+          <ul class="space-y-1.5 text-candy-butter/80">
+            <li>🍦 Ice Cream Bee Crepe</li>
+            <li>🥓 Meatlovers and Cheese</li>
+            <li>🍫 Chocomaltine Cheese</li>
+            <li>🫐 Blueberry Cheese</li>
+            <li>🍓 Strawberry Cheese</li>
+            <li>⭐ Choco Cheese</li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-2 text-xs">
+          <h5 class="font-bold text-white text-sm">Booth Information</h5>
+          <p class="text-candy-butter/80">Mall of Serang (MOS), Lantai Dasar</p>
+          <p class="text-candy-butter/80">Panancangan, Cipocok Jaya, Serang</p>
+          <p class="text-candy-butter/80 font-bold text-candy-yellow mt-1">WA: 0896-2019-4042</p>
+        </div>
+
+      </div>
+
+      <div class="pt-6 text-center text-xs text-candy-butter/60 font-medium">
+        © 2026 Bee Crepes Mall of Serang · Fresh Tasty n' Fun · Made with Sweet Smiles 🐝
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Product Detail Modal (No Price Displayed) -->
+  <div id="detail-modal" class="fixed inset-0 z-50 bg-choco-deep/70 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-md rounded-3xl overflow-hidden border-4 border-choco-dark shadow-candy flex flex-col max-h-[90vh] animate-in fade-in duration-200">
+      
+      <div class="relative h-60 bg-candy-butter overflow-hidden">
+        <img id="modal-img" src="" alt="Detail Menu" class="w-full h-full object-cover">
+        <button onclick="closeDetail()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-choco-dark text-candy-butter hover:bg-choco-main font-bold flex items-center justify-center text-sm border-2 border-white shadow">
+          ✕
+        </button>
+        <span id="modal-tag" class="absolute bottom-3 left-3 bg-candy-yellow text-choco-dark font-black text-xs px-3 py-1 rounded-full border-2 border-choco-dark shadow">
+          Menu Crepes
+        </span>
+      </div>
+
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <div>
+          <h3 id="modal-title" class="font-heading font-extrabold text-2xl text-choco-dark">Nama Menu</h3>
+          <p id="modal-desc" class="text-xs text-choco-light mt-1.5 leading-relaxed">Deskripsi</p>
+        </div>
+
+        <div class="bg-candy-ivory p-4 rounded-2xl border-2 border-candy-butter">
+          <h5 class="text-xs font-bold text-choco-dark uppercase tracking-wider mb-1">
+            🍯 Komposisi & Rasa:
+          </h5>
+          <p id="modal-ingredients" class="text-xs text-choco-light leading-normal">Bahan-bahan pilihan</p>
+        </div>
+
+        <div class="pt-2 flex items-center gap-3">
+          <button onclick="addModalItem()" class="flex-1 bg-candy-yellow hover:bg-candy-gold text-choco-dark font-black py-3 px-4 rounded-2xl border-2 border-choco-dark btn-candy-3d text-sm flex items-center justify-center gap-2">
+            <i class="fa-solid fa-plus"></i> Tambah ke Pesanan
+          </button>
+          <button onclick="closeDetail()" class="px-5 py-3 rounded-2xl border-2 border-candy-butter text-xs font-bold text-choco-light hover:bg-candy-ivory">
+            Tutup
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Candy Cart Drawer (Pure Quantities, No Price Listed) -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 bg-choco-deep/60 backdrop-blur-xs hidden flex justify-end">
+    <div class="bg-white w-full max-w-md h-full flex flex-col border-l-4 border-choco-dark shadow-2xl">
+      
+      <!-- Drawer Header -->
+      <div class="bg-candy-yellow p-5 border-b-3 border-choco-dark flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🐝</span>
+          <div>
+            <h3 class="font-heading font-extrabold text-choco-dark text-lg">Keranjang Crepes</h3>
+            <p class="text-[11px] text-choco-dark/80 font-bold">Bee Crepes Mall of Serang</p>
+          </div>
+        </div>
+        <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-full bg-choco-dark text-white font-bold flex items-center justify-center text-sm border-2 border-white">
+          ✕
+        </button>
+      </div>
+
+      <!-- Drawer Items List -->
+      <div id="cart-items" class="p-5 flex-1 overflow-y-auto space-y-3">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Drawer Footer with Cute Order Button -->
+      <div class="p-5 bg-candy-ivory border-t-3 border-choco-dark space-y-3">
+        <div class="flex items-center justify-between text-sm font-bold text-choco-dark">
+          <span>Total Porsi Dipilih:</span>
+          <span id="cart-total-badge" class="bg-candy-yellow px-3 py-0.5 rounded-full border border-choco-dark text-xs font-black">
+            0 Porsi
+          </span>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-choco-dark mb-1">Nama Pemesan & Catatan:</label>
+          <input type="text" id="order-notes" placeholder="Contoh: Sarah (Keju dibanyakin ya kak)" class="w-full text-xs px-3.5 py-2.5 rounded-xl border-2 border-candy-butter focus:outline-none focus:border-candy-yellow bg-white font-medium">
+        </div>
+
+        <button onclick="orderViaWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3.5 px-4 rounded-2xl border-2 border-choco-dark btn-candy-3d text-sm flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Kirim Pesanan ke WhatsApp Kasir</span>
+        </button>
+        <p class="text-[10px] text-center text-choco-light/80 italic font-medium">
+          *Kasir akan mengonfirmasi ketersediaan menu dan total harga langsung di chat.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Candy Toast Alert -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-choco-dark text-candy-butter px-5 py-3 rounded-2xl border-2 border-candy-yellow shadow-candy flex items-center gap-3 text-xs font-bold">
+    <span class="text-base">✨</span>
+    <span id="toast-msg">Menu berhasil ditambahkan!</span>
+  </div>
+
+  <script>
+    // Product data using provided official assets
+    const products = {
+      1: {
+        id: 1,
+        title: "Meatlovers and Cheese",
+        category: "savory",
+        image: "image_77a03b.jpg",
+        tag: "🥓 Savory Treat",
+        desc: "Crepes gurih renyah dengan isian potongan sosis sapi berlimpah, irisan smoked beef tebal, daun selada renyah, saus mayones segar, dan limpahan keju cheddar parut tebal.",
+        ingredients: "Adonan crepes gurih mentega, sosis sapi pilihan, smoked beef, selada segar, keju cheddar parut, saus mayones, saus tomat/sambal."
+      },
+      2: {
+        id: 2,
+        title: "Ice Cream Bee",
+        category: "special",
+        image: "image_77a075.jpg",
+        tag: "🍦 Signature Cold Cone",
+        desc: "Crepe cone yang diisi dengan dua scoop es krim lembut dingin cokelat dan vanila, potongan pisang segar, lelehan saus cokelat manis, taburan wafer renyah, dan cokelat bubuk.",
+        ingredients: "Crepe cone renyah, scoop es krim cokelat & vanila, buah pisang mas, saus cokelat Belgia, remahan wafer lezat, bubuk cokelat."
+      },
+      3: {
+        id: 3,
+        title: "Chocomaltine Cheese",
+        category: "sweet",
+        image: "image_77a091.jpg",
+        tag: "🍫 Crunchy Malt",
+        desc: "Olesan selai Chocomaltine tebal bertekstur butiran malt renyah bercampur lezatnya parutan keju cheddar tebal dalam lipatan crepes hangat gurih.",
+        ingredients: "Adonan crepes renyah, selai Chocomaltine crunchy, parutan tebal keju cheddar, susu kental manis."
+      },
+      4: {
+        id: 4,
+        title: "Blueberry Cheese",
+        category: "sweet",
+        image: "image_77a09a.jpg",
+        tag: "🫐 Sweet & Tangy",
+        desc: "Paduan selai buah blueberry asli yang manis segar dengan parutan keju cheddar gurih di atas lembaran crepes keemasan tipis garing.",
+        ingredients: "Adonan crepes mentega wangi, selai buah blueberry segar, keju cheddar parut melimpah."
+      },
+      5: {
+        id: 5,
+        title: "Choco Cheese",
+        category: "sweet",
+        image: "image_77a39a.jpg",
+        tag: "⭐ Best Seller Klasik",
+        desc: "Varian klasik kegemaran semua orang. Taburan cokelat meses manis yang berlimpah dipadu keju cheddar gurih nikmat di setiap gigitan.",
+        ingredients: "Kulit crepes renyah, butiran cokelat meses tebal, keju cheddar serut, susu kental manis."
+      },
+      6: {
+        id: 6,
+        title: "Strawberry Cheese",
+        category: "sweet",
+        image: "image_77a3ba.jpg",
+        tag: "🍓 Fresh Berry",
+        desc: "Sensasi saus stroberi merah juicy asam manis berpadu butiran cokelat meses dan keju parut gurih yang meleleh di mulut.",
+        ingredients: "Kulit crepes crispy, saus stroberi manis asam segar, butiran cokelat meses, parutan keju cheddar."
+      }
+    };
+
+    // State
+    let cart = [];
+    let currentDetailId = null;
+
+    // Filter Menu Tab
+    function filterCategory(cat, button) {
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('bg-choco-dark', 'text-candy-butter');
+        btn.classList.add('bg-white', 'text-choco-dark');
+      });
+
+      button.classList.add('bg-choco-dark', 'text-candy-butter');
+      button.classList.remove('bg-white', 'text-choco-dark');
+
+      document.querySelectorAll('.menu-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Modal Handlers
+    function openDetail(id) {
+      const item = products[id];
+      if (!item) return;
+
+      currentDetailId = id;
+      document.getElementById('modal-img').src = item.image;
+      document.getElementById('modal-title').innerText = item.title;
+      document.getElementById('modal-desc').innerText = item.desc;
+      document.getElementById('modal-tag').innerText = item.tag;
+      document.getElementById('modal-ingredients').innerText = item.ingredients;
+
+      document.getElementById('detail-modal').classList.remove('hidden');
+    }
+
+    function closeDetail() {
+      document.getElementById('detail-modal').classList.add('hidden');
+    }
+
+    function addModalItem() {
+      if (currentDetailId) {
+        addToOrder(currentDetailId);
+        closeDetail();
+      }
+    }
+
+    // Cart Management
+    function addToOrder(id) {
+      const item = products[id];
+      if (!item) return;
+
+      const existing = cart.find(c => c.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: item.id, title: item.title, image: item.image, qty: 1 });
+      }
+      updateCartDisplay();
+      showToast(`"${item.title}" ditambahkan ke pesanan! 🐝`);
+    }
+
+    function changeQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartDisplay();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+      document.getElementById('nav-cart-badge').innerText = totalQty;
+      document.getElementById('cart-total-badge').innerText = `${totalQty} Porsi`;
+
+      const container = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-choco-light">
+            <span class="text-4xl block mb-2">🥞</span>
+            <p class="font-bold text-choco-dark text-sm">Keranjang masih kosong</p>
+            <p class="text-xs text-choco-light/80 mt-1">Pilih menu crepes kesukaanmu dulu ya!</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, index) => `
+        <div class="flex items-center justify-between bg-candy-ivory p-3 rounded-2xl border-2 border-candy-butter gap-3">
+          <div class="flex items-center gap-3">
+            <img src="${item.image}" alt="${item.title}" class="w-12 h-12 rounded-xl object-cover border border-choco-dark/20">
+            <div>
+              <h5 class="font-bold text-xs text-choco-dark">${item.title}</h5>
+              <span class="text-[11px] text-choco-light font-semibold">${item.qty} Porsi</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center bg-white rounded-xl border border-choco-dark overflow-hidden text-xs">
+              <button onclick="changeQty(${index}, -1)" class="px-2.5 py-1 font-black text-choco-dark hover:bg-candy-butter">-</button>
+              <span class="px-2 font-bold">${item.qty}</span>
+              <button onclick="changeQty(${index}, 1)" class="px-2.5 py-1 font-black text-choco-dark hover:bg-candy-butter">+</button>
+            </div>
+            <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 text-xs p-1" title="Hapus">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleCartDrawer() {
+      document.getElementById('cart-drawer').classList.toggle('hidden');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').innerText = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2500);
+    }
+
+    // Direct WhatsApp message formatting (Inquiring price and items)
+    function orderViaWhatsApp() {
+      if (cart.length === 0) {
+        showToast("Pilih setidaknya satu menu crepes ya! 🐝");
+        return;
+      }
+
+      const notes = document.getElementById('order-notes').value.trim() || "Tidak ada catatan tambahan";
+      let msg = `Halo Bee Crepes Mall of Serang (MOS)! 🐝\nSaya mau pesan menu crepes:\n\n`;
+
+      cart.forEach((item, idx) => {
+        msg += `${idx + 1}. *${item.title}* (${item.qty} porsi)\n`;
+      });
+
+      msg += `\n*Catatan/Nama Pemesan:* ${notes}\n`;
+      msg += `*Lokasi Pengambilan:* Booth Bee Crepes MOS Lantai Dasar\n\n`;
+      msg += `Mohon info ketersediaan stok, total harga yang harus dibayar, dan estimasi waktunya ya. Terima kasih! ✨`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/6289620194042?text=${encoded}`, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartDisplay();
+    });
+  </script>
+</body>
+</html>
